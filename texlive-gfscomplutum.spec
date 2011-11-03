@@ -1,3 +1,9 @@
+# revision 19469
+# category Package
+# catalog-ctan /fonts/greek/gfs/gfscomplutum
+# catalog-date 2008-08-19 21:00:04 +0200
+# catalog-license ofl
+# catalog-version 1.0
 Name:		texlive-gfscomplutum
 Version:	1.0
 Release:	1
@@ -58,6 +64,7 @@ new set of majuscules.
 %doc %{_texmfdistdir}/doc/fonts/gfscomplutum/README.TEXLIVE
 %doc %{_texmfdistdir}/doc/fonts/gfscomplutum/gfscomplutum.pdf
 %doc %{_texmfdistdir}/doc/fonts/gfscomplutum/gfscomplutum.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -68,3 +75,5 @@ new set of majuscules.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
