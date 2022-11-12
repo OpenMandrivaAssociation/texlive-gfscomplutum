@@ -1,18 +1,12 @@
-# revision 19469
-# category Package
-# catalog-ctan /fonts/greek/gfs/gfscomplutum
-# catalog-date 2008-08-19 21:00:04 +0200
-# catalog-license ofl
-# catalog-version 1.0
 Name:		texlive-gfscomplutum
-Version:	1.0
-Release:	11
+Version:	19469
+Release:	1
 Summary:	A Greek font with a long history
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/greek/gfs/gfscomplutum
 License:	OFL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gfscomplutum.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gfscomplutum.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gfscomplutum.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/gfscomplutum.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -27,12 +21,12 @@ The Greek Font Society has released this version, which has a
 new set of majuscules.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -58,24 +52,10 @@ new set of majuscules.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0-2
-+ Revision: 752272
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
-+ Revision: 718549
-- texlive-gfscomplutum
-- texlive-gfscomplutum
-- texlive-gfscomplutum
-- texlive-gfscomplutum
-
