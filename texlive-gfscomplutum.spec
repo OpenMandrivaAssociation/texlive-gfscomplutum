@@ -1,6 +1,6 @@
 Name:		texlive-gfscomplutum
 Version:	19469
-Release:	1
+Release:	2
 Summary:	A Greek font with a long history
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/greek/gfs/gfscomplutum
